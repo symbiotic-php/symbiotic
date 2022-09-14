@@ -1,0 +1,35 @@
+<FilesMatch "\.md5$">
+    Deny from all
+</FilesMatch>
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+#показать все ошибки кроме предупреждений (Notice)
+php_value error_reporting "E_ALL & ~E_NOTICE"
+DirectoryIndex index.php
+Options -Indexes
+# Comment the following line, if option Multiviews not allowed here
+Options -MultiViews
+AddDefaultCharset utf-8
+
+<ifModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteCond %{HTTP_USER_AGENT} (SolomonoBot|HaosouSpider|MJ12Bot|AhrefsBot|SemrushBot|360Spider)
+    RewriteRule ^.*$ - [R=404,L]
+    # Uncomment the following line, if you are having trouble
+    #RewriteBase /
+
+    #RewriteCond %{HTTP:Front-End-Https} !on
+    #RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    RewriteCond %{REQUEST_FILENAME} !-f [or]
+    RewriteCond %{REQUEST_METHOD} ^(PUT|COPY|MOVE|DELETE|PROPFIND|OPTIONS|MKCOL)$ [or]
+    RewriteCond %{HTTP:Translate} ^.+$ [or]
+    RewriteCond %{HTTP_USER_AGENT} ^(DavClnt|litmus|gvfs|davfs|wdfs|WebDAV|cadaver|Cyberduck)
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [L,QSA]
+</ifModule>
+
+

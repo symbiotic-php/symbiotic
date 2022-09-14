@@ -1,0 +1,23 @@
+{
+  "name": "symbiotic/symbiotic",
+  "description": "Symbiotic Framework project.",
+  "version": "1.4.0",
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "symbiotic/full": "^1.4",
+    "symbiotic/auth-login": "^1.4",
+    "symbiotic/autoloader": "^1.4",
+    "symbiotic/workerman": "^1.4"
+  },
+  "require-dev": {
+    "symbiotic/develop": "^1.4"
+  },
+  "suggest": {
+    "symbiotic/workerman": "(>=1.4.0) Server on Workerman RoadRunner.",
+    "symbiotic/develop": " (>=1.4.0) App for developers.",
+    "symbiotic/console": "(>=1.4.0) Support console commands.",
+    "symbiotic/settings-app": "(>=1.4.0) Application for editing kernel settings, file systems and application packages."
+  }
+}
