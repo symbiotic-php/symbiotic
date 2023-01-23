@@ -1,12 +1,12 @@
 {
   "name": "symbiotic/symbiotic",
   "description": "Symbiotic Framework project.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "license": [
     "MIT"
   ],
   "require": {
-    "symbiotic/full": "^1.4",
+    "symbiotic/full": "^1.4.1",
     "symbiotic/auth-login": "^1.4",
     "symbiotic/autoloader": "^1.4",
     "symbiotic/workerman": "^1.4"

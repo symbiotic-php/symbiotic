@@ -43,8 +43,7 @@ foreach ($config['packages_paths'] as $v) {
 }
 
 // Installing a session on file storage for Roadrunner mode (CLI)
-if ((isset($_ENV['APP_RUNNING_IN_CONSOLE']) && $_ENV['APP_RUNNING_IN_CONSOLE'] === 'true') ||
-    \in_array(\php_sapi_name(), ['cli', 'phpdbg'])) {
+if (\_S\is_console()) {
     $config['session'] = [
         'driver' => 'file',
         'minutes' => 1200,
